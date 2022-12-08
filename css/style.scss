@@ -1,0 +1,274 @@
+// Colors
+$white: hsl(0, 0%, 100%);
+$light-grayish-violet: hsl(270, 3%, 87%);
+$dark-grayish-violet: hsl(279, 6%, 55%);
+$very-dark-violet: hsl(278, 68%, 11%);
+$red: hsl(0, 100%, 66%);    // input errors
+// active input border gradient
+$gradient-light: hsl(249, 99%, 64%);
+$gradient-dark: hsl(278, 94%, 30%);
+
+// Load fonts
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    background: $white url('../images/bg-main-mobile.png') no-repeat center top;
+    background-size: 100% 240px;
+}
+
+@mixin card ($bg-color: gray, $bg-url: none) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 285px;
+    height: 160px;
+    background: $bg-color $bg-url no-repeat center center;
+    background-size: cover;
+    font-size: 0.55em;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2em;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 20px 50px 0 rgba($color: #000000, $alpha: 0.3);
+    padding: 75px 20px 20px 20px;
+}
+
+.interactive-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 576px;
+    //border: 1px solid lime;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 30px 3%;
+    margin: 0;
+    font: 500 18px 'Space Grotesk', sans-serif;
+    //& > div { border: 1px solid pink; }
+    //& > div > div { border: 1px solid violet; }
+
+    .card-info {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column-reverse;
+        flex: 0 1 0;
+        margin-bottom: 5px;
+    }
+    .card-front {
+        @include card($gradient-dark, url('../images/bg-card-front.png'));
+        align-self: start;
+        position: relative;
+        top: -70px;
+        margin-bottom: -70px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 55px;
+            height: 32px;
+            background: url('../images/card-logo.svg') no-repeat left top;
+            background-size: 100%;
+        }
+    }
+    .card-number {
+        font-size: 1.8em;
+        line-height: 0.9em;
+        flex-basis: 100%;
+    }
+    .card-back {
+        @include card($light-grayish-violet ,url('../images/bg-card-back.png'));
+        align-self: end;
+        padding: 73px 35px 20px 20px;
+        text-align: right;
+    }
+
+    // Form
+    .form-info{
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 380px;
+        margin: 0 5%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        //justify-content: center;
+        color: $dark-grayish-violet;
+    }
+    form {
+        width: 100%;
+        flex-grow: inherit;
+        display: inherit;
+        flex-direction: inherit;
+        justify-content: space-evenly;
+        max-height: 450px;
+        gap: 10px;
+    }
+    fieldset {
+        margin: 0;
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        fieldset {
+            flex: 1 0 0;
+        }
+    }
+    label {
+        flex-basis: 100%;
+        text-transform: uppercase;
+        color: $very-dark-violet;
+        font-size: 70%;
+        letter-spacing: 1.5px;
+    }
+    input {
+        width: 40%;
+        flex: 1 0 0;
+        padding: 0.5em 1em;
+        border: 2px solid $light-grayish-violet;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        font: inherit;
+
+        &::placeholder {
+            font: inherit;
+            color: $light-grayish-violet;
+        }
+        &:focus {
+            outline: none;
+            background: linear-gradient($white,$white) padding-box,
+                        linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%) border-box;
+            border: 2px solid transparent;
+            color: $very-dark-violet;
+        }
+    }
+    button {
+        background: $very-dark-violet  none;
+        border: 2px solid $very-dark-violet;
+        font: inherit;
+        color: $white;
+        padding: 0.7em 1em;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    }
+    .completed {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 300px;
+        text-align: center;
+        gap: 10px;
+        display: none; // important
+        em { 
+            display: block;
+            margin-bottom: 1rem;
+            font-style: normal;
+            text-transform: uppercase;
+            font-size: 160%;
+            letter-spacing: 3px;
+            color: $very-dark-violet;
+        }
+        &::before {
+            content: url(../images/icon-complete.svg);
+        }
+        button {
+            margin-top: 1em;
+        }
+    }
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .interactive-card button:hover {
+        background-color: $white;
+        color: $very-dark-violet;
+    }
+}
+
+// For desktop
+@media only screen and (min-width: 992px) {
+    body {
+        background: $white url('../images/bg-main-desktop.png') no-repeat left center;
+        background-size: 34% 100%;
+    }
+    .interactive-card {
+        max-width: 1050px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+        padding: 1rem 0;
+        margin: 0 5%;
+        .card-info {
+            max-width: 540px;
+            align-self: center;
+            flex-direction: column;
+            flex: 1 1 50%;
+            gap: 2.4rem;
+            margin: 0;
+        }
+        .card-front {
+            top: 0;
+            margin-bottom: 0;
+            height: 245px;
+            max-width: 445px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            padding: 140px 30px 25px 30px;
+            gap: 30px;
+            &::before {
+                width: 75px;
+                height: 45px;
+                top: 30px;
+                left: 30px;
+            }
+        }
+        .card-number {
+            font-size: 2.1em;
+            line-height: 0.9em;
+            letter-spacing: 2px;
+        }
+        .card-back {
+            height: 245px;
+            max-width: 445px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            padding: 112px 55px;
+            font-size: 0.75em;
+        }
+        .form-info {
+            height: 450px;
+            max-width: 380px;
+            flex: 1 1 50%;
+            margin: 0;
+        }   
+    }
+}
+
+//.interactive-card fieldset, .interactive-card button[type=submit] {display: none;}
+
+//.interactive-card .completed {display: none;}

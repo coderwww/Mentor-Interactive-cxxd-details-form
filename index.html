@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="interactive-card">
+
+    <div class="card-info">
+      <div class="card-front">
+        <div class="card-number">0000 0000 0000 0000</div>
+        <div class="card-name">Jane Appleseed</div>
+        <div class="card-expiry">00/00</div>
+      </div>
+      <div class="card-back">
+        000
+      </div>
+    </div>
+
+    <div class="form-info">
+      <form action="." method="post">
+        <fieldset>
+          <label for="name">Cardholder Name</label>
+          <input type="text" name="" id="" placeholder="e.g. Jane Appleseed">
+        </fieldset>
+        <fieldset>
+          <label for="name">Card Number</label>
+          <input type="number" name="" id="" placeholder="e.g. 1234 5678 9123 0000">
+        </fieldset>
+        <fieldset>
+          <fieldset>
+            <label for="name">Exp. Date (MM/YY)</label>
+            <input type="number" name="" id="" placeholder="MM">
+            <input type="number" name="" id="" placeholder="YY">
+          </fieldset>
+          <fieldset>
+            <label for="name">CVC</label>
+            <input type="number" name="" id="" placeholder="e.g. 123">
+          </fieldset>
+        </fieldset>
+        <button type="submit">Confirm</button>
+
+        <div class="completed">
+          <div><em>Thank you!</em> We've added your card details</div>
+          <button type="reset">Continue</button>
+        </div>
+      </form> 
+    </div>
+
+  </div>
+
+<script src="./scripts/index.js"></script>
+
+</body>
+</html>

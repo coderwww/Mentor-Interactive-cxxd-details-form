@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(0deg, 0%, 100%);
+  background: hsl(0deg, 0%, 100%) url("../images/bg-main-mobile.png") no-repeat center top;
+  background-size: 100% 240px;
+}
+
+.interactive-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 576px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 30px 3%;
+  margin: 0;
+  font: 500 18px "Space Grotesk", sans-serif;
+}
+.interactive-card .card-info {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 0 1 0;
+  margin-bottom: 5px;
+}
+.interactive-card .card-front {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 285px;
+  height: 160px;
+  background: hsl(278deg, 94%, 30%) url("../images/bg-card-front.png") no-repeat center center;
+  background-size: cover;
+  font-size: 0.55em;
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+  padding: 75px 20px 20px 20px;
+  align-self: start;
+  position: relative;
+  top: -70px;
+  margin-bottom: -70px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.interactive-card .card-front::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 55px;
+  height: 32px;
+  background: url("../images/card-logo.svg") no-repeat left top;
+  background-size: 100%;
+}
+.interactive-card .card-number {
+  font-size: 1.8em;
+  line-height: 0.9em;
+  flex-basis: 100%;
+}
+.interactive-card .card-back {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 285px;
+  height: 160px;
+  background: hsl(270deg, 3%, 87%) url("../images/bg-card-back.png") no-repeat center center;
+  background-size: cover;
+  font-size: 0.55em;
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+  padding: 75px 20px 20px 20px;
+  align-self: end;
+  padding: 73px 35px 20px 20px;
+  text-align: right;
+}
+.interactive-card .form-info {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 5%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  color: hsl(279deg, 6%, 55%);
+}
+.interactive-card form {
+  width: 100%;
+  flex-grow: inherit;
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: space-evenly;
+  max-height: 450px;
+  gap: 10px;
+}
+.interactive-card fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+.interactive-card fieldset fieldset {
+  flex: 1 0 0;
+}
+.interactive-card label {
+  flex-basis: 100%;
+  text-transform: uppercase;
+  color: hsl(278deg, 68%, 11%);
+  font-size: 70%;
+  letter-spacing: 1.5px;
+}
+.interactive-card input {
+  width: 40%;
+  flex: 1 0 0;
+  padding: 0.5em 1em;
+  border: 2px solid hsl(270deg, 3%, 87%);
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  font: inherit;
+}
+.interactive-card input::placeholder {
+  font: inherit;
+  color: hsl(270deg, 3%, 87%);
+}
+.interactive-card input:focus {
+  outline: none;
+  background: linear-gradient(hsl(0deg, 0%, 100%), hsl(0deg, 0%, 100%)) padding-box, linear-gradient(135deg, hsl(249deg, 99%, 64%) 0%, hsl(278deg, 94%, 30%) 100%) border-box;
+  border: 2px solid transparent;
+  color: hsl(278deg, 68%, 11%);
+}
+.interactive-card button {
+  background: hsl(278deg, 68%, 11%) none;
+  border: 2px solid hsl(278deg, 68%, 11%);
+  font: inherit;
+  color: hsl(0deg, 0%, 100%);
+  padding: 0.7em 1em;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.interactive-card .completed {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 300px;
+  text-align: center;
+  gap: 10px;
+  display: none;
+}
+.interactive-card .completed em {
+  display: block;
+  margin-bottom: 1rem;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 160%;
+  letter-spacing: 3px;
+  color: hsl(278deg, 68%, 11%);
+}
+.interactive-card .completed::before {
+  content: url(../images/icon-complete.svg);
+}
+.interactive-card .completed button {
+  margin-top: 1em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .interactive-card button:hover {
+    background-color: hsl(0deg, 0%, 100%);
+    color: hsl(278deg, 68%, 11%);
+  }
+}
+@media only screen and (min-width: 992px) {
+  body {
+    background: hsl(0deg, 0%, 100%) url("../images/bg-main-desktop.png") no-repeat left center;
+    background-size: 34% 100%;
+  }
+  .interactive-card {
+    max-width: 1050px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 1rem 0;
+    margin: 0 5%;
+  }
+  .interactive-card .card-info {
+    max-width: 540px;
+    align-self: center;
+    flex-direction: column;
+    flex: 1 1 50%;
+    gap: 2.4rem;
+    margin: 0;
+  }
+  .interactive-card .card-front {
+    top: 0;
+    margin-bottom: 0;
+    height: 245px;
+    max-width: 445px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 0.75em;
+    padding: 140px 30px 25px 30px;
+    gap: 30px;
+  }
+  .interactive-card .card-front::before {
+    width: 75px;
+    height: 45px;
+    top: 30px;
+    left: 30px;
+  }
+  .interactive-card .card-number {
+    font-size: 2.1em;
+    line-height: 0.9em;
+    letter-spacing: 2px;
+  }
+  .interactive-card .card-back {
+    height: 245px;
+    max-width: 445px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 112px 55px;
+    font-size: 0.75em;
+  }
+  .interactive-card .form-info {
+    height: 450px;
+    max-width: 380px;
+    flex: 1 1 50%;
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
