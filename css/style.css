@@ -46,7 +46,7 @@ body {
   line-height: 1.2em;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.15);
   padding: 75px 20px 20px 20px;
   align-self: start;
   position: relative;
@@ -87,7 +87,7 @@ body {
   line-height: 1.2em;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.15);
   padding: 75px 20px 20px 20px;
   align-self: end;
   padding: 73px 35px 20px 20px;
@@ -123,6 +123,9 @@ body {
 .interactive-card fieldset fieldset {
   flex: 1 0 0;
 }
+.interactive-card fieldset:has(fieldset) {
+  gap: 20px;
+}
 .interactive-card label {
   flex-basis: 100%;
   text-transform: uppercase;
@@ -132,6 +135,7 @@ body {
 }
 .interactive-card input {
   width: 40%;
+  max-height: 45px;
   flex: 1 0 0;
   padding: 0.5em 1em;
   border: 2px solid hsl(270deg, 3%, 87%);
@@ -148,6 +152,17 @@ body {
   background: linear-gradient(hsl(0deg, 0%, 100%), hsl(0deg, 0%, 100%)) padding-box, linear-gradient(135deg, hsl(249deg, 99%, 64%) 0%, hsl(278deg, 94%, 30%) 100%) border-box;
   border: 2px solid transparent;
   color: hsl(278deg, 68%, 11%);
+}
+.interactive-card input.edited:invalid {
+  border: 2px solid hsl(0deg, 100%, 66%);
+}
+.interactive-card .error {
+  color: hsl(0deg, 100%, 66%);
+  font-size: 0.7em;
+  flex-basis: 100%;
+}
+.interactive-card fieldset:last-child {
+  height: min-content;
 }
 .interactive-card button {
   background: hsl(278deg, 68%, 11%) none;
@@ -200,13 +215,13 @@ body {
     background-size: 34% 100%;
   }
   .interactive-card {
-    max-width: 1050px;
+    max-width: 1100px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-    padding: 1rem 0;
-    margin: 0 5%;
+    padding: 1rem 50px 1rem 0;
+    margin: 0 2%;
   }
   .interactive-card .card-info {
     max-width: 540px;

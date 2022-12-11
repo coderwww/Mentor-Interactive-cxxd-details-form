@@ -17,7 +17,7 @@
       <div class="card-front">
         <div class="card-number">0000 0000 0000 0000</div>
         <div class="card-name">Jane Appleseed</div>
-        <div class="card-expiry">00/00</div>
+        <div class="card-expiry"><span>00</span>/<span>00</span></div>
       </div>
       <div class="card-back">
         000
@@ -27,22 +27,24 @@
     <div class="form-info">
       <form action="." method="post">
         <fieldset>
-          <label for="name">Cardholder Name</label>
-          <input type="text" name="" id="" placeholder="e.g. Jane Appleseed">
+          <label for="c-name">Cardholder Name</label>
+          <input type="text" inputmode="latin-name" name="c-name" id="c-name" placeholder="e.g. Jane Appleseed" 
+                  pattern="^[a-zA-Z][a-zA-Z ]{2,21}$"  maxlength="22" required>
         </fieldset>
         <fieldset>
-          <label for="name">Card Number</label>
-          <input type="number" name="" id="" placeholder="e.g. 1234 5678 9123 0000">
+          <label for="c-number">Card Number</label>
+          <input type="text" name="c-number" id="c-number" placeholder="e.g. 1234 5678 9123 0000" 
+                  pattern="[0-9 ]{19}" maxlength="19" required>
         </fieldset>
         <fieldset>
           <fieldset>
-            <label for="name">Exp. Date (MM/YY)</label>
-            <input type="number" name="" id="" placeholder="MM">
-            <input type="number" name="" id="" placeholder="YY">
+            <label for="c-mm">Exp. Date (MM/YY)</label>
+            <input type="text" name="c-mm" id="c-mm" placeholder="MM" pattern="0[1-9]|1[0-2]" maxlength="2" required>
+            <input type="text" name="c-yy" id="c-yy" placeholder="YY" pattern="[0-9]{2}" maxlength="2" required>
           </fieldset>
           <fieldset>
-            <label for="name">CVC</label>
-            <input type="number" name="" id="" placeholder="e.g. 123">
+            <label for="c-cvc">CVC</label>
+            <input type="text" name="c-cvc" id="c-cvc" placeholder="e.g. 123" pattern="[0-9]{3}" maxlength="3" required>
           </fieldset>
         </fieldset>
         <button type="submit">Confirm</button>
