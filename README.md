@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/coderwww/Mentor-Interactive-cxxd-details-form](https://github.com/coderwww/Mentor-Interactive-cxxd-details-form)
+- Live Site URL: [https://coderwww.github.io/Mentor-Interactive-cxxd-details-form](https://coderwww.github.io/Mentor-Interactive-cxxd-details-form)
 
 ## My process
 
