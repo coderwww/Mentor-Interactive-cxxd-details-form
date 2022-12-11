@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/coderwww/Mentor-Interactive-cxxd-details-form](https://github.com/coderwww/Mentor-Interactive-cxxd-details-form)
-- Live Site URL: [https://coderwww.github.io/Mentor-Interactive-cxxd-details-form](https://coderwww.github.io/Mentor-Interactive-cxxd-details-form)
+- Live Site URL: [https://coderwww.github.io/Mentor-Interactive-cxxd-details-form](https://coderwww.github.io/Mentor-Interactive-cxxd-details-formy)
 
 ## My process
 
