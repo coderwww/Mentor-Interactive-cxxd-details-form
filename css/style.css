@@ -96,8 +96,9 @@ body {
 .interactive-card .form-info {
   box-sizing: border-box;
   width: 100%;
-  max-width: 380px;
+  max-width: 410px;
   margin: 0 5%;
+  padding: 0 3%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -267,6 +268,7 @@ body {
     max-width: 380px;
     flex: 1 1 50%;
     margin: 0;
+    padding: 0;
   }
 }
 

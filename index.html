@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <div class="interactive-card">
+  <div class="interactive-card" role="main">
 
     <div class="card-info">
       <div class="card-front">
@@ -28,7 +28,7 @@
       <form action="." method="post">
         <fieldset>
           <label for="c-name">Cardholder Name</label>
-          <input type="text" inputmode="latin-name" name="c-name" id="c-name" placeholder="e.g. Jane Appleseed" 
+          <input type="text" name="c-name" id="c-name" placeholder="e.g. Jane Appleseed" 
                   pattern="^[a-zA-Z][a-zA-Z ]{2,21}$"  maxlength="22" required>
         </fieldset>
         <fieldset>

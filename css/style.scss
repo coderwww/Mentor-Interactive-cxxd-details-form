@@ -45,7 +45,6 @@ body {
     box-sizing: border-box;
     width: 100%;
     max-width: 576px;
-    //border: 1px solid lime;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -54,8 +53,6 @@ body {
     padding: 30px 3%;
     margin: 0;
     font: 500 18px 'Space Grotesk', sans-serif;
-    //& > div { border: 1px solid pink; }
-    //& > div > div { border: 1px solid violet; }
 
     .card-info {
         width: 100%;
@@ -103,12 +100,12 @@ body {
     .form-info{
         box-sizing: border-box;
         width: 100%;
-        max-width: 380px;
+        max-width: 410px;
         margin: 0 5%;
+        padding: 0 3%;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        //justify-content: center;
         color: $dark-grayish-violet;
     }
     form {
@@ -277,10 +274,7 @@ body {
             max-width: 380px;
             flex: 1 1 50%;
             margin: 0;
+            padding: 0;
         }   
     }
 }
-
-//.interactive-card fieldset, .interactive-card button[type=submit] {display: none;}
-
-//.interactive-card .completed {display: none;}
