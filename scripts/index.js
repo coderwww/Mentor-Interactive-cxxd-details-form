@@ -1,6 +1,7 @@
 fields = [
     { input: '#c-name', 
-        cardField: '.interactive-card .card-name'},
+        cardField: '.interactive-card .card-name',
+        default: ''},
     { input: '#c-number', 
         cardField: '.interactive-card .card-number'},
     { input: '#c-mm', 
@@ -21,6 +22,8 @@ fields.forEach(obj => {
     error.style.display = 'none';
     error.textContent = input.maxLength;
     const errorField = input.parentElement.appendChild(error);
+
+    obj.defaultHTML = cardField.innerHTML;
 
     let checkInput = event => {
         if (input.validity.valid){
@@ -52,13 +55,12 @@ fields.forEach(obj => {
     });
     input.addEventListener("input", event => {
         input.classList.add('edited');
-    }, {once1: true})
+    })
 
     input.addEventListener("invalid", event => {
         input.classList.add('edited');
         checkInput(event);
     });
-    input.valid = true;
 });
 
 
@@ -82,4 +84,7 @@ form.addEventListener('reset', event => {
         item.style.display = 'flex';
     })
     form.querySelector('.completed').style.display = 'none';
+    fields.forEach(obj => {
+        document.querySelector(obj.cardField).innerHTML = obj.defaultHTML;
+    })
 });

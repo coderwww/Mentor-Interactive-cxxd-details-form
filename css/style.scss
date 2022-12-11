@@ -129,6 +129,7 @@ body {
         gap: 10px;
         fieldset {
             flex: 1 0 0;
+            height: min-content;
         }
         &:has(fieldset) { gap: 20px }
     }
@@ -168,9 +169,7 @@ body {
         color: $red;
         font-size: 0.7em;
         flex-basis: 100%;
-    }
-    fieldset:last-child {
-        height: min-content;
+        transition: all 0.5s ease-in-out;
     }
     button {
         background: $very-dark-violet  none;

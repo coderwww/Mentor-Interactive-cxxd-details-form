@@ -122,6 +122,7 @@ body {
 }
 .interactive-card fieldset fieldset {
   flex: 1 0 0;
+  height: min-content;
 }
 .interactive-card fieldset:has(fieldset) {
   gap: 20px;
@@ -160,9 +161,7 @@ body {
   color: hsl(0deg, 100%, 66%);
   font-size: 0.7em;
   flex-basis: 100%;
-}
-.interactive-card fieldset:last-child {
-  height: min-content;
+  transition: all 0.5s ease-in-out;
 }
 .interactive-card button {
   background: hsl(278deg, 68%, 11%) none;
